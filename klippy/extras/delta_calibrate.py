@@ -95,8 +95,8 @@ class DeltaCalibrate:
                 y = dist * math.sin(angle)
                 points.append((x, y))
         else:
-        points = [(0., 0.)]
-        scatter = [.95, .90, .85, .70, .75, .80]
+            points = [(0., 0.)]
+            scatter = [.95, .90, .85, .70, .75, .80]
         for i in range(6):
             r = math.radians(90. + 60. * i)
             dist = radius * scatter[i]

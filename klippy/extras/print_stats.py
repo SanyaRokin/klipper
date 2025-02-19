@@ -104,7 +104,7 @@ class PrintStats:
             # Start FLSUN Changes
             #self.total_duration = eventtime - self.print_start_time
             if(self.duration == 0):
-            self.total_duration = eventtime - self.print_start_time
+                self.total_duration = eventtime - self.print_start_time
             else:
                 self.total_duration = eventtime - self.print_start_time + self.duration
             # End FLSUN Changes

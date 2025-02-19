@@ -207,7 +207,7 @@ class Homing:
         if self.set_home_speed_flag:
             hmove.homing_move(homepos, self.my_home_speed)
         else:
-        hmove.homing_move(homepos, hi.speed)
+            hmove.homing_move(homepos, hi.speed)
         # End FLSUN Changes
         # Perform second home
         if hi.retract_dist:

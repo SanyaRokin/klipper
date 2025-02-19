@@ -333,9 +333,10 @@ class ProbeSessionHelper:
                         toolhead.dwell(0.5)
                         continue
                 else:
-            if "Timeout during endstop homing" in reason:
-                reason += HINT_TIMEOUT
-            raise self.printer.command_error(reason)
+                    if "Timeout during endstop homing" in reason:
+                        reason += HINT_TIMEOUT
+                    raise self.printer.command_error(reason)
+        # Allow axis_twist_compensation to update results
         # Allow axis_twist_compensation to update results
         self.printer.send_event("probe:update_results", epos)
         # Report results
