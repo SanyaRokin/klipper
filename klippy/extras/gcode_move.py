@@ -45,6 +45,7 @@ class GCodeMove:
         self.speed = 25.
         self.speed_factor = 1. / 60.
         self.extrude_factor = 1.
+        self.max_z = 430 # FLSUN Changes
         # G-Code state
         self.saved_states = {}
         self.move_transform = self.move_with_transform = None
@@ -73,6 +74,7 @@ class GCodeMove:
         self.base_position[3] = self.last_position[3]
     def _handle_home_rails_end(self, homing_state, rails):
         self.reset_last_position()
+        self.max_z = self.last_position[2] # FLSUN Changes
         for axis in homing_state.get_axes():
             self.base_position[axis] = self.homing_position[axis]
     def set_move_transform(self, transform, force=False):
